@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/tranzbook/static/css/main.63a97a0f.css",
+    "main.css": "/tranzbook/static/css/main.4a2b59f8.css",
     "main.js": "/tranzbook/static/js/main.1b25e4dd.js",
     "static/js/787.ffb2ed57.chunk.js": "/tranzbook/static/js/787.ffb2ed57.chunk.js",
     "static/media/Inter-VariableFont_slnt,wght.ttf": "/tranzbook/static/media/Inter-VariableFont_slnt,wght.afdb8a07907da21452bf.ttf",
@@ -11,12 +11,12 @@
     "static/media/TBcargo.svg": "/tranzbook/static/media/TBcargo.ffe9b56086bfb62f7fbdf841d216da95.svg",
     "static/media/4.png": "/tranzbook/static/media/4.9991b5925133296909fe.png",
     "index.html": "/tranzbook/index.html",
-    "main.63a97a0f.css.map": "/tranzbook/static/css/main.63a97a0f.css.map",
+    "main.4a2b59f8.css.map": "/tranzbook/static/css/main.4a2b59f8.css.map",
     "main.1b25e4dd.js.map": "/tranzbook/static/js/main.1b25e4dd.js.map",
     "787.ffb2ed57.chunk.js.map": "/tranzbook/static/js/787.ffb2ed57.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.63a97a0f.css",
+    "static/css/main.4a2b59f8.css",
     "static/js/main.1b25e4dd.js"
   ]
 }
