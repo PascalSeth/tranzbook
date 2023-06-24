@@ -92,7 +92,7 @@ function Form({ onSearch }) {
               <div className='dropdown-container'>
                 <select           className='dropdownlst'
  value={origin} onChange={handleOriginChange}>
-                  <option value=''>Select a city</option>
+                  <option value=''>ORIGIN</option>
                   {
                   cities.map((city, index) => (
                     <option key={index} value={city}>
@@ -110,7 +110,7 @@ function Form({ onSearch }) {
               <h6>TO</h6>
               <div className='dropdown-container'>
                 <select className='cont' value={destination} onChange={handleDestinationChange}>
-                  <option value=''>Select a city</option>
+                  <option value=''>DESTINATION</option>
                   {filteredCities.map((city, index) => (
                     <option key={index} value={city}>
                       {city}
