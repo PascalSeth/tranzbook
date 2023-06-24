@@ -1,0 +1,113 @@
+.ticketinfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ticketcontainer{
+    display: flex;
+    margin-bottom: 7vh;
+}
+.value{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    padding: 2vw;
+    padding-top: 7vh;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    margin-right: 2vw;
+
+}
+.buspic>img{
+    width: 10vw;
+    height: 11vh;
+}
+.value>button:hover{cursor: pointer;
+}
+.value>button{
+    border: none;
+    background: none;
+    outline: none;
+    padding: 2vh;
+    border-radius: 6px;
+    margin-bottom: 2vh;
+    width: 6vw;
+}
+.location{
+    display: flex;
+    background-color: white;
+    padding: 2vh;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    width: 40vw;
+    height: 25vh;
+    justify-content: space-between;
+
+}
+.leftloca{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-between;
+}
+.rightloca{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.rightloca>h6{
+    text-align:center;
+    font-size: 3vh;
+    padding-top: 4vh;
+}
+.rightloca>button{
+    background-color: #FDB022;
+    border: none;
+    outline: none;
+    padding: 1.4vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+}
+.rightloca>button:hover{
+cursor: pointer;
+background-color: #fdb02294;
+}
+
+.sectiontop>h2{
+    font-size: 2vh;
+    display: flex;
+    align-items: center;
+
+}
+.sectiontop>h3{
+    font-size: 1.4vh;
+    display: flex;
+    align-items: center;
+    color: #FDB022;
+}
+.sectionbottom>h2{
+    font-size: 2vh;
+    display: flex;
+    align-items: center;
+    
+}
+.sectionbottom>h3{
+    font-size: 1.4vh;
+    display: flex;
+    align-items: center;
+    color: #FDB022;
+}
+
+
+.ic{
+    color: black;
+    height: 2vh !important;
+}
+.cals{
+    color: #FDB022;
+}

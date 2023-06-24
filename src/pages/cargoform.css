@@ -1,0 +1,72 @@
+.cargoform{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    border: 1px solid white;
+    background-color: white;
+}
+.cargoform>form{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.information{
+    display: flex;
+    align-items: center;
+    border: 1px solid whitesmoke;
+    box-shadow: 2px 3px 10px whitesmoke;
+    padding: 0.5vh;
+    margin-bottom: 1vh;
+    border-radius: 8px;
+    width: 100%;
+}
+.cargotxt{
+    display: flex;
+    align-items: center;
+    padding: 0.7vh;
+}
+.cargotxtd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cargotxtd>h6{
+    margin-right: 0.3vw;
+}
+.cargotxt>h6{
+    margin-right: 0.3vw;
+}
+.inputfield>input{
+    border-radius: 8px;
+    border: none;
+    padding-bottom: 10vh;
+    outline: none;
+    background: none;
+
+}
+.inputfield{
+    border-radius: 8px;
+    box-shadow: 2px 3px 10px whitesmoke;
+    border: 1px solid whitesmoke;
+    width: 100%;
+
+}
+.formbutton{
+    padding: 1vh;
+    background-color: rgb(71, 132, 247);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 2vh;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.formbutton>button{
+    padding: 1vh;
+    border: none;
+    background: none;
+    color: white;
+    font-weight: 600;
+}

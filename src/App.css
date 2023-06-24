@@ -1,0 +1,9 @@
+*{
+  margin: 0;
+    font-family:inter ;
+
+}
+@font-face {
+  font-family:inter ;
+  src: url(../public/Inter-VariableFont_slnt\,wght.ttf);
+}

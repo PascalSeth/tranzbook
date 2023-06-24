@@ -1,0 +1,16 @@
+.searchpg{
+    display: flex;
+flex-direction: column;
+align-items: center;
+background: linear-gradient(to right,#48A0FF,#fdb022c4);
+width: 100%;
+height: 100%;
+}
+.result{
+    display: flex;
+    flex-direction: column;
+   
+}
+.title2{
+    padding-top: 3vh;
+}

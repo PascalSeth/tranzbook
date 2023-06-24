@@ -1,0 +1,8 @@
+.hlinks>button{
+outline: none;
+border: none;
+border-radius: 8px;
+padding: 1vw;
+font-weight: 600;
+cursor: pointer;
+}

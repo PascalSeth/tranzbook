@@ -1,0 +1,135 @@
+.navbar{
+display: flex;
+margin: 0;
+justify-content: space-between;
+top: 0;
+left: 0;
+z-index: 999;
+padding: 1.6vh;
+position: sticky;
+width: 100%;
+background-color: #fff;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    
+}
+.linksi>img{
+    object-fit: contain;
+    margin-right: 2vw;
+    align-items: center;
+    
+    }
+    .linksc{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    .links{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin-right: 1vw;
+        color: #475467;
+        font-weight: 600;
+        font-size: 1.8vh; padding: 1.2vh;
+
+    }
+    
+.links:hover{
+ background-color: #48a0ff5b;
+ border-radius: 4pc;
+ color: black;
+ }
+ .linksd{
+  display: flex;
+  align-items: center;
+ }
+ .dropicon{
+  margin-right: 0.9vw;
+  background: none;
+ }
+ .linksw{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 1vw;
+}
+ .dropdown>h5:hover{
+    cursor: pointer;
+    color: #48A0FF;
+    border-radius: 8px;
+ }
+.dropdown{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    align-items: center;
+color: #475467;position: relative;
+z-index: 2;
+}
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 3vh;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 5px 4px 4px rgba(66, 65, 65, 0.1);
+    min-width: 150px;
+    z-index: 1;
+    border-radius: 4px;padding: 2vh;
+    width: 13vw;
+  }
+  
+  .dropdown-content  :hover{
+  background-color: #fdb02223;
+    font-weight: 600;
+    
+    
+  }
+  .dropdown-content a {
+    display: flex;
+    text-decoration: none;
+    color: #475467;
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 2vh;
+    font-size: 1.8vh;
+width: 90%;
+
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+.right{
+    display: flex;
+    align-items: center;
+    padding-right: 10%;
+}
+.right>:hover{
+    cursor: pointer;
+}
+.loginb{
+    padding: 10px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #F2F4F7;
+    outline: none;
+}
+.signupb{
+    padding: 10px;
+    background-color: #48A0FF;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color:white;
+}
