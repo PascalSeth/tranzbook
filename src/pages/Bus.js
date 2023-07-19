@@ -1,7 +1,7 @@
 import React from 'react'
-import Form from './Form'
 import second from '../picture files/busIlustration 1.svg'
 import './bus.css'
+import FormNew from './FormNew'
 
 function Bus() {
   return (
@@ -11,7 +11,8 @@ function Bus() {
       <h5 className='normal'> Check Bus Schedules, Compare Prices and Book Ticket Online</h5>
     </div>
   <div className='fill'>
-<Form/><div className='fill-in'>
+<FormNew/>
+<div className='fill-in'>
 <img src={second} alt=''/>
 </div>
 </div>

@@ -1,0 +1,62 @@
+.busseat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.bus-seats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 700px; /* Adjust the maximum width as needed */
+}
+
+.bus-seat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bus-seat.selected {
+  background-color: #2196f3;
+  color: white;
+}
+
+.bus-seat.pair-seat {
+  background-color: #ff4081; /* Customize the background color for pair seats */
+}
+
+.seat-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.seat-number {
+  font-size: 14px;
+}
+
+.clear-button {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clear-icon {
+  margin-right: 5px;
+}

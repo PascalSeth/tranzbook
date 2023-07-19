@@ -12,7 +12,8 @@ import Busbooking from './components/Busbooking';
 import SchoolsBooking from './components/SchoolsBooking';
 import Truckbooking from './components/Truckbooking';
 import AgroPrefinancing from './components/AgroPrefinancing';
-import Search from './components/Search';
+import BusSeatSelection from './pages/BusSeatSelection';
+import SearchNew from './components/SearchNew';
 
 function App() {
   return (
@@ -26,12 +27,13 @@ function App() {
  <Route path='/careers' element={<Careers/>} />
  <Route path='/bus' element={<Bus/>} />
 <Route path='/cargo' element={<Cargo/>} />
+<Route path='/seats' element={<BusSeatSelection/>} />
 <Route path='/gallery' element={<Gallery/>}/>
-<Route path='/search' element={<Search/>}/>
 <Route path='/busbooking' element={<Busbooking/>}/>
 <Route path='schoolbooking' element={<SchoolsBooking/>}/>
 <Route path='/truckbooking' element={Truckbooking}/>
 <Route path='/agroprefinancing' element={AgroPrefinancing}/>
+<Route path='/search' element={<SearchNew/>}/>
 </Routes>
  </>
   );

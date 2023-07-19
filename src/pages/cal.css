@@ -4,6 +4,9 @@
     justify-content: space-between;
 
 }
+.fea{
+  align-items: center;
+}
 .datep{    
     outline: none;
 outline: none;
@@ -80,13 +83,13 @@ width: 8vw;
   .react-datepicker__day--disabled {
     color: rgb(219, 213, 213); /* Set the desired color for disabled dates */
   }
-  .clear-button{
+  .form-clear-button{
     border: none;
     outline: none;
     background: none;
   
   }
-  .clear-button:hover{
+  .form-clear-button:hover{
     cursor: pointer;
     background-color: #48A0FF;
     color: white;
