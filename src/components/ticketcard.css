@@ -1,0 +1,116 @@
+.ticketcontainer{
+    display: flex;
+    margin-bottom: 7vh;
+}
+.value{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    padding: 2vh;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+    margin-right: 2vw;
+    height: 25vh;
+
+}
+.buspic>img{
+    width: 12vw;
+    height: 12vh;
+    object-fit: fill;
+
+}
+.value>button:hover{cursor: pointer;
+}
+.value>button{
+    border: none;
+    background: none;
+    outline: none;
+    padding: 1.4vh;
+    border-radius: 6px;
+    margin-top: 2vh;
+    width: fit-content;
+}
+.location{
+    display: flex;
+    background-color: white;
+    padding: 2vh;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    width: 40vw;
+    height: 25vh;
+    justify-content: space-between;
+
+}
+.leftloca{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-between;
+}
+.rightloca{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.rightloca>h6{
+    text-align:center;
+    font-size: 3vh;
+    padding-top: 4vh;
+    color: #48A0FF;
+}
+.book-button>button{
+    background-color: #FDB022;
+    border: none;
+    outline: none;
+    padding: 1.2vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+}
+.book-button>button:hover{
+cursor: pointer;
+background-color: #fdb02294;
+}
+.tickethead{
+    font-size: 2vh;
+}
+.sectiontop>h2{
+    font-size: 2vh;
+    display: flex;
+    align-items: center;
+    color: #48A0FF;
+
+
+}
+.sectiontop>h3{
+    font-size: 1.4vh;
+    display: flex;
+    align-items: center;
+    color: #FDB022;
+}
+.sectionbottom>h2{
+    font-size: 2vh;
+    display: flex;
+    align-items: center;
+    color: #48A0FF;
+    
+}
+.sectionbottom>h3{
+    font-size: 1.4vh;
+    display: flex;
+    align-items: center;
+    color: #FDB022;
+}
+
+
+.ic{
+    color: black;
+    height: 2vh !important;
+}
+.cals{
+    color: #FDB022;
+}

@@ -1,51 +1,107 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCouch, faTrash } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
 import './busseat.css';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
+import KitchenOutlinedIcon from '@mui/icons-material/KitchenOutlined';
+import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
+import DesktopWindowsOutlinedIcon from '@mui/icons-material/DesktopWindowsOutlined';
+import { useLocation } from 'react-router-dom'; // Import useLocation
+import PanoramaFishEyeSharpIcon from '@mui/icons-material/PanoramaFishEyeSharp';
+import LocationOnSharpIcon from '@mui/icons-material/LocationOnSharp';
+import AccessTimeSharpIcon from '@mui/icons-material/AccessTimeSharp';
+import Busbooking from '../components/Busbooking';
 
-const BusSeatSelection = () => {
-  const totalSeats = 55; // Total number of seats
-  const [selectedSeats, setSelectedSeats] = useState([]);
-  const availableSeats = totalSeats - selectedSeats.length;
-
-  const handleSeatClick = (seatNumber) => {
-    setSelectedSeats((prevSelectedSeats) => {
-      // Toggle seat selection
-      if (prevSelectedSeats.includes(seatNumber)) {
-        return prevSelectedSeats.filter((seat) => seat !== seatNumber);
-      } else {
-        return [...prevSelectedSeats, seatNumber];
-      }
-    });
-  };
-
-  const handleClearSelection = () => {
-    setSelectedSeats([]);
-  };
+function BusSeatSelection() {
+  const location = useLocation(); // Use useLocation hook
+  const origin = location.state ? location.state.origin : 'N/A';
+  const destination = location.state ? location.state.destination : 'N/A';
+  const ticketQuantity = location.state ? location.state.ticketQuantity : 'N/A';
 
   return (
-    <div className='busseat'>
-      <h2>Bus Seat Selection</h2>
-      <p>Selected Seats: {selectedSeats.join(', ')}</p>
-      <p>Available Seats: {availableSeats}</p>
-      <div className="bus-seats">
-        {Array.from({ length: totalSeats }, (_, index) => (
-          <div
-            key={index}
-            className={`bus-seat ${selectedSeats.includes(index + 1) ? 'selected' : ''}`}
-            onClick={() => handleSeatClick(index + 1)}
-          >
-            <FontAwesomeIcon icon={faCouch} className="seat-icon" />
-            <span className="seat-number">{index + 1}</span>
+    
+    <div className='busseatpick'>
+      <div className='buscontainerseat'>
+        <div className='pickseat'>
+          <div className='pickseat-left'>
+            <h3>Review Ticket options</h3>
+        
           </div>
-        ))}
-      </div>
-      <button className="clear-button" onClick={handleClearSelection}>
-        <FontAwesomeIcon icon={faTrash} className="clear-icon" />
-        Clear Selection
-      </button>
-    </div>
-  );
-};
+          <div className='pickseat-right'>
+            <h4>420</h4>
+            <div className='continue-button-pick'>
+              <button>Continue</button>
+            </div>
+          </div>
+        </div>
+        <div className='pickcard'>
+          <div className='pickcard-orient'>
+          <div className='pickcardtop'>
+                      <PanoramaFishEyeSharpIcon className='pickcardicon'/> Origin: {origin} |
+          </div>
+          <div className='pickcardbottom'>
+                      <AccessTimeSharpIcon className='pickcardicon'/>  Ticket Quantity: {ticketQuantity}
 
-export default BusSeatSelection;
+          </div>
+          </div>
+          <div className='pickcard-orient'>
+          <div className='pickcardtop'>
+                      <LocationOnSharpIcon className='pickcardicon'/> Destination: {destination} | 
+            </div>
+            <div className='pickcardbottom'>
+                       <AccessTimeSharpIcon className='pickcardicon'/>  Ticket Quantity: {ticketQuantity}
+
+          </div>
+          </div>
+    
+        </div>
+
+      <div className='seatselection'>
+<div className='seat-header'>
+<h4>Flexibilities and Conditions</h4>
+</div>
+<div className='seat-book'>
+<Busbooking/>
+</div>
+      </div>
+<div className='amenities'>
+<div className='seat-header'>
+  <h4>Amenities</h4></div>
+
+  <div className='amenitylistcontainer'>
+  <div className='amenitylist'>
+    <div className='amenityiconcontainer'>
+    <AcUnitIcon className='amenityicon'/>
+    Air Conditioning
+    </div>
+    
+    <div className='amenityiconcontainer'>
+<KitchenOutlinedIcon className='amenityicon'/>
+Refrigerator
+    </div>
+    
+    <div className='amenityiconcontainer'>
+<PowerSettingsNewOutlinedIcon className='amenityicon'/>
+   Power Outlets
+    </div>
+    
+    <div className='amenityiconcontainer'>
+<DesktopWindowsOutlinedIcon className='amenityicon'/>
+   Television
+    </div>
+    </div>
+    <div className='continue-button'>
+    <button>
+      Continue
+    </button>
+  </div>
+
+  
+  </div>
+
+</div>
+
+</div>
+    </div>
+  )
+}
+
+export default BusSeatSelection
