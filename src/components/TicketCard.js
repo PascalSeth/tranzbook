@@ -4,6 +4,8 @@ import PanoramaFishEyeSharpIcon from '@mui/icons-material/PanoramaFishEyeSharp';
 import LocationOnSharpIcon from '@mui/icons-material/LocationOnSharp';
 import AccessTimeSharpIcon from '@mui/icons-material/AccessTimeSharp';
 import './ticketcard.css';
+import { useNavigate } from 'react-router-dom';
+
 
 function TicketCard() {
   const ticketLocation = useLocation();
@@ -13,6 +15,18 @@ function TicketCard() {
   const handleButtonClick = (button) => {
     setActiveButton(button);
   };
+  const navigate = useNavigate();
+
+  const handleSeats = () => {
+    navigate('/seats', {
+      state: {
+        origin,
+        destination,
+        ticketQuantity,
+        selectedDate,
+      },
+    });
+  }
 
   const tickets = [
     {
@@ -96,16 +110,8 @@ function TicketCard() {
               </div>
               <div className='rightloca'>
                 <h6>Price</h6>
-                <div className='book-button'>
-                <Link
-  className='book-button'
-  to={{
-    pathname: '/seats',
-    state: { origin, destination, ticketQuantity }, // Pass origin, destination, and ticketQuantity as props
-  }}
->
+                <div onClick={handleSeats} className='book-button'>
   <button>Book</button>
-</Link>
 
                 </div>
               </div>
