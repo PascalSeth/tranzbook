@@ -91,3 +91,203 @@ color: white !important;
     transform: scale(96%);
   }}
 }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .widgets {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 1vh;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+  }
+
+  .container {
+    flex-basis: calc(45% - 1.2vw); /* Set each container to take up 50% of the available width with some spacing */
+    height: 22vh;
+    overflow: hidden;
+    background-color: white;
+    margin: 2vw;
+    border: none;
+    border-radius: 6px;
+    animation: scaleAnimation 4s infinite;
+  }
+
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(60%);
+  }
+  50% {
+    transform: scale(75%);
+  }
+  100% {
+    transform: scale(96%);
+  }}
+}
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  /* Styles for tablet devices */
+  .widgets {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 1vh;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+  }
+
+  .container {
+    flex-basis: calc(45% - 1.2vw); /* Set each container to take up 50% of the available width with some spacing */
+    height: 22vh;
+    overflow: hidden;
+    background-color: white;
+    margin: 2vw;
+    border: none;
+    border-radius: 6px;
+    animation: scaleAnimation 4s infinite;
+  }
+
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(60%);
+  }
+  50% {
+    transform: scale(75%);
+  }
+  100% {
+    transform: scale(96%);
+  }}
+}
+@media screen and (min-width: 915px) and (min-height: 412px) {
+  /* Your styles for a screen size of 915x412 pixels or larger go here */
+.widgets {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 1vh;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+  }
+
+  .container {
+    flex-basis: calc(20% - 1.2vw); /* Set each container to take up 50% of the available width with some spacing */
+    height: 30vh;
+    overflow: hidden;
+    background-color: white;
+    margin: 2vw;
+    border: none;
+    border-radius: 6px;
+    animation: scaleAnimation 4s infinite;
+  }
+
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(60%);
+  }
+  50% {
+    transform: scale(75%);
+  }
+  100% {
+    transform: scale(96%);
+  }}
+}
+
+@media screen and (min-width: 896px) and (min-height: 414px) {
+  .widgets {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 1vh;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+  }
+
+  .container {
+    flex-basis: calc(20% - 1.2vw); /* Set each container to take up 50% of the available width with some spacing */
+    height: 30vh;
+    overflow: hidden;
+    background-color: white;
+    margin: 2vw;
+    border: none;
+    border-radius: 6px;
+    animation: scaleAnimation 4s infinite;
+  }
+
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(60%);
+  }
+  50% {
+    transform: scale(75%);
+  }
+  100% {
+    transform: scale(96%);
+  }}
+
+}
+@media screen and (min-width: 667px) and (min-height: 375px) {
+  .widgets {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 1vh;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+  }
+
+  .container {
+    flex-basis: calc(20% - 1.2vw); /* Set each container to take up 50% of the available width with some spacing */
+    height: 30vh;
+    overflow: hidden;
+    background-color: white;
+    margin: 2vw;
+    border: none;
+    border-radius: 6px;
+    animation: scaleAnimation 4s infinite;
+  }
+
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(60%);
+  }
+  50% {
+    transform: scale(75%);
+  }
+  100% {
+    transform: scale(96%);
+  }}
+
+}
+/* Standard iPad (Portrait) */
+@media screen and (max-width: 768px) and (min-height: 1024px) {
+  /* Your styles for the standard iPad in portrait mode go here */
+  .widgets {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 1vh;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+  }
+
+  .container {
+    flex-basis: calc(40% - 1.2vw); /* Set each container to take up 50% of the available width with some spacing */
+    height: 30vh;
+    overflow: hidden;
+    background-color: white;
+    margin: 2vw;
+    border: none;
+    border-radius: 6px;
+    animation: scaleAnimation 4s infinite;
+  }
+
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(60%);
+  }
+  50% {
+    transform: scale(75%);
+  }
+  100% {
+    transform: scale(96%);
+  }}
+
+}

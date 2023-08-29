@@ -148,3 +148,17 @@ width: 90%;
     cursor: pointer;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .linksc {
+    display: none;
+    flex-direction: column; /* Display links vertically when shown */
+  }
+
+  /* Style the menu button */
+  .menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
