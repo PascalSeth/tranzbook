@@ -15,7 +15,10 @@
     width: 15vw;
     border: none;
     border-radius: 6px;
-    animation: scaleAnimation 4s infinite;
+      -webkit-animation: scaleAnimation 4s infinite; /* WebKit prefix */
+      animation: scaleAnimation 4s infinite;
+    
+    
   }
   
   .container:hover {
