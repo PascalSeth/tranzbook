@@ -109,5 +109,40 @@
 }
 .fq{
     background-color: #0066D4;
-    ;
+    justify-content: center;
+}
+@media screen and (max-width: 750px) {
+    .why{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .topx{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .head{
+        padding-bottom: 1vh;
+        display: flex;
+    }       
+    .imagepic>img{
+        height: 55vh;
+        width: 80VW;
+        animation: image-animation 2s forwards ;
+    }
+    .owners{
+        display: flex;
+        margin-top: 15vh;
+    flex-direction: column-reverse;
+    align-items: center;
+    }
+    .lefth>img{
+        height: 55vh;
+        width: 80VW;
+        animation: image-animation 2s forwards ;
+    }
+    
 }

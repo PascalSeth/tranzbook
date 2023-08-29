@@ -4,10 +4,11 @@ margin: 0;
 justify-content: space-between;
 top: 0;
 left: 0;
+right: 0;
 z-index: 999;
 padding: 1.6vh;
 position: sticky;
-width: 100%;
+width: auto;
 background-color: #DEF5FB;
 }
 
@@ -132,4 +133,18 @@ width: 90%;
     border-radius: 5px;
     outline: none;
     color:white;
+}
+@media screen and (max-width: 750px) {
+  .linksc {
+    display: none;
+    flex-direction: column; /* Display links vertically when shown */
+  }
+
+  /* Style the menu button */
+  .menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
 }

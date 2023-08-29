@@ -182,7 +182,8 @@ const handleDateChange = (date) => {
             </div>
           </div>
         </div>
-        <div className='form-space'>
+        <div className='calcontainer'>       
+        <div className='calform-space'>
           <CalendarTodayIcon className='float-Icon' />
           <div className='columnContainer'>
             <div className='word'>
@@ -197,7 +198,7 @@ const handleDateChange = (date) => {
             </div>
           </div>
         </div>
-        <div className='form-space'>
+        <div className='calform-space2'>
           <CalendarMonthIcon className='float-Icon' />
           <div className='columnContainer'>
             <div className='word'>
@@ -207,7 +208,8 @@ const handleDateChange = (date) => {
               <ReturnCalendarInput selectedDate={selectedDate} />
             </div>
           </div>
-        </div>
+        </div></div>
+ 
         <div className='form-spacex'>
           <ConfirmationNumberIcon className='float-Icon' />
           <div className='columnContainer'>

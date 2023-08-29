@@ -1,25 +1,63 @@
-.title{
-    align-items: center;
+/* Base styles for .title */
+.title {
     display: flex;
     flex-direction: column;
+    text-align: center; /* Center align text */
 }
-.orange{
+
+/* Styles for .orange text */
+.orange {
     color: #FDB022;
-    font-size:7.4vh;
+    font-size: 4.4vw; /* Adjusted for responsiveness */
     font-weight: 600;
-    font: Inter;
+    font-family: 'Inter', sans-serif; /* Use font-family property */
 }
-.normal{
+
+/* Styles for .normal text */
+.normal {
     color: #475467;
-    font-size:2.7vh;
+    font-size: 1.6vw; /* Adjusted for responsiveness */
     font-weight: 500;
+    font-family: 'Inter', sans-serif; /* Use font-family property */
 }
-.fill{
+
+/* Styles for .fill container */
+.fill {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center align items horizontally */
 }
-.fill-in>img{
-    object-fit: contain;
-    height: 45vh;
-    width: 100%;
+
+/* Styles for images inside .fill-in */
+.fill-in > img {
+    max-width: 100%; /* Ensure images don't exceed their container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Media query for screens smaller than 768px (adjust the breakpoint as needed) */
+@media screen and (max-width: 768px) {
+    .Bus{
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+    }
+    .title {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .orange {
+        font-size: 4.5vh; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;/* Adjusted font size for smaller screens */
+    }
+    .normal {
+        font-size: 2vh; /* Adjusted font size for smaller screens */
+        margin-bottom: 2vh;
+    }
+    .fill-in > img {
+        height: auto; /* Reset height to maintain aspect ratio */
+    }
 }

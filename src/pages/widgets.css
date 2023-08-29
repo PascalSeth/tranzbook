@@ -3,14 +3,17 @@
     align-items: center;
     margin-bottom: 5vh;
     margin-top: 2vh;
+    width: 100%;
+    justify-content: center;
 }
 .container {
+  display: flex;
+  flex-direction: column;
     height: 30vh;
     background-color: white;
     margin: 1vw;
     width: 15vw;
     border: none;
-    margin: 3vw;
     border-radius: 6px;
     animation: scaleAnimation 4s infinite;
   }
@@ -53,4 +56,35 @@ color: white !important;
     padding: 0.8vw;
     border-radius: 10pt;
 }
+@media screen and (max-width: 750px) {
+  .widgets {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 1vh;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+  }
 
+  .container {
+    flex-basis: calc(45% - 1.2vw); /* Set each container to take up 50% of the available width with some spacing */
+    height: 22vh;
+    overflow: hidden;
+    background-color: white;
+    margin: 0.3vw;
+    border: none;
+    border-radius: 6px;
+    animation: scaleAnimation 4s infinite;
+  }
+
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(60%);
+  }
+  50% {
+    transform: scale(75%);
+  }
+  100% {
+    transform: scale(96%);
+  }}
+}
