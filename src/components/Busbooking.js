@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AirlineSeatReclineNormalOutlinedIcon from '@mui/icons-material/AirlineSeatReclineNormalOutlined';
 
+
 function Busbooking() {
   // Generate an array of seat numbers (1-45)
   const seatNumbers = Array.from({ length: 45 }, (_, index) => index + 1);
@@ -29,23 +30,37 @@ function Busbooking() {
   ];
 
   return (
-    <div style={{backgroundColor:'white',padding:'2vw',display:'flex',flexDirection:'column',alignItems:'center'}}>
-      <div style={{marginBottom:"2vh"}}>  
+    <div className='bg-white p-[2vw] flex flex-col items-center'>
+      <div className='mb-[5vh] flex-col '>  
           {seatGrid.map((row, rowIndex) => (
+        <div key={rowIndex} className='flex'>
+          {row.map((seatNumber) => (
+            <div
+            className='seatings flex-col mx-[1vw] max-lg:mx-[2vw] my-[1vh] w-fit cursor-pointer
+             border-gray-400 
+             items-center flex border rounded-lg maxl'
+              key={seatNumber}
+              onClick={() => toggleSeatSelection(seatNumber)} // Handle seat selection on click
+            >
+              <AirlineSeatReclineNormalOutlinedIcon />
+              {seatNumbers.includes(seatNumber) && (
+                <span style={{ fontWeight:'600',
+                color: selectedSeats.includes(seatNumber) ? 'white' : '#6C7782', // Change background color when selected
+              }}>{seatNumber}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      ))}
+      </div>
+
+      <div style={{marginBottom:"2vh"}}>  
+          {seatGrid2.map((row, rowIndex) => (
         <div key={rowIndex} style={{ display: 'flex' }}>
           {row.map((seatNumber) => (
             <div
+            className='seatings flex-col mx-[1vw] max-lg:mx-[2vw] my-[1vh] w-fit cursor-pointer border-gray-400 items-center flex border rounded-lg'
               key={seatNumber}
-              style={{
-                margin: '5px',
-                backgroundColor: selectedSeats.includes(seatNumber) ? 'orange' : 'white', // Change background color when selected
-                cursor: 'pointer',
-                display:'flex',
-                alignItems:'center',
-                width:'3vw',
-                borderRadius:'9px',
-                border:'0.5px solid lightgray'
-              }}
               onClick={() => toggleSeatSelection(seatNumber)} // Handle seat selection on click
             >
               <AirlineSeatReclineNormalOutlinedIcon />
@@ -60,40 +75,7 @@ function Busbooking() {
       ))}
       </div>
   
-      {/* Add a div for seatGrid2 */}
-      <div>
-        {seatGrid2.map((row, rowIndex) => (
-          <div key={rowIndex} style={{ display: 'flex' }}>
-            {row.map((seatNumber) => (
-              <div
-                key={seatNumber}
-                style={{
-                  margin: '5px',
-                  backgroundColor: selectedSeats.includes(seatNumber)
-                    ? 'orange'
-                    : 'white', // Change background color when selected
-                  cursor: 'pointer',
-                  display:'flex',
-                  alignItems:'center',
-                  width:'3vw',
-                  borderRadius:'9px',
-                  border:'0.5px solid lightgray'
-
-
-                }}
-                onClick={() => toggleSeatSelection(seatNumber)} // Handle seat selection on click
-              >
-                <AirlineSeatReclineNormalOutlinedIcon />
-                {seatNumbers.includes(seatNumber) && (
-                  <span style={{  fontWeight:'600',
-                  color: selectedSeats.includes(seatNumber) ? 'white' : '#6C7782', // Change background color when selected
-                }}>{seatNumber}</span>
-                )}
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+     
     </div>
   );
 }

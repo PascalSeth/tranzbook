@@ -1,16 +1,20 @@
 import React from 'react';
-import './why.css';
 import three from '../picture files/2.png';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import four from '../picture files/3.png';
+import {motion} from 'framer-motion'
 
 function Why({ activeButton }) {
   return (
-    <div className='why'>
-      <div className='head'>
-        <h5>Why TranzBook</h5>
+    <div className=' flex flex-col items-center mx-[15%]'>
+      <div className='flex'>
+        <h5 className='text-center max-md:text-[4vh] font-sans font-semibold text-[6vh]'>Why TranzBook</h5>
       </div>
-      <div className='topx'>
+      <motion.div
+      initial={{x:-500,opacity:0.2}}
+      animate={{x:0,opacity:1 }}
+      transition={{duration:2.5}}
+      className='flex items-center  max-md:flex-col max-md:items-center max-lg:flex-col max-lg:items-center'>
         <div className='left-text'>
           {activeButton !== 'Cargo' && (
             <>
@@ -98,14 +102,19 @@ location and delivery status.</h5>
           )}
         </div>
         <div className='imagepic'>
-          <img src={three} alt='' />
+          <img src={three} alt=''
+                    className='h-full w-[60vw] ml-[2vw]' />
         </div>
-      </div>
-      <div className='owners'>
+      </motion.div>
+      <motion.div
+      initial={{x:500,opacity:0.2}}
+      animate={{x:0,opacity:1 }}
+      transition={{duration:2.5}} className='owners'>
         <div className='lefth'>
-          <img src={four} alt='' />
+          <img src={four} alt=''
+          className='h-full w-[50vw]' />
         </div>
-        <div className='righttxt'>
+        <div className='righttxt ml-[2vw]'>
          
           {activeButton !== 'Cargo' && (
             <> <h4>Bus Owners</h4>
@@ -169,8 +178,8 @@ delivery times.              </h5>
             </>
           )}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </div> 
   );
 }
 

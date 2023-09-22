@@ -17,7 +17,7 @@ import SearchNew from './components/SearchNew';
 
 function App() {
   return (
-    <>      
+    <div className='h-screen w-full  overflow-x-hidden z-0'>      
 <Navbar/>
 <Routes> 
   <Route index element={<Homepage/>} />
@@ -35,7 +35,7 @@ function App() {
 <Route path='/agroprefinancing' element={AgroPrefinancing}/>
 <Route path='/search' element={<SearchNew/>}/>
 </Routes>
- </>
+ </div>
   );
 }
 

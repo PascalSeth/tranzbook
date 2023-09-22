@@ -27,7 +27,6 @@ const CalendarInput = ({ onDateChange }) => {
           minDate={new Date()}
           className="datep"
           placeholderText="Date"
-          dateFormat="MMMM d, yyyy"
         />
       </div>
       <div className="fea">

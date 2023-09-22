@@ -29,7 +29,6 @@ const ReturnCalendarInput = ({ selectedDate }) => {
           selected={selectedRdate}
           onChange={handleDateChange}
           placeholderText='Optional'
-          dateFormat='MMMM d, yyyy'
           minDate={selectedDate ? new Date(selectedDate.getTime() + 86400000) : new Date()}
         />
       </div>

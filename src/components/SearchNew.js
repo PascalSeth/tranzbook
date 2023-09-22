@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import FormNew from '../pages/FormNew';
 import './searchnew.css';
-import HorizontalCalendarStrip from '../pages/Calendarstrip';
+import HorizontalCalendarStrip from './Calendar/Calendarstrip';
 import TicketCard from './TicketCard';
 
 function SearchNew() {
@@ -13,10 +13,10 @@ function SearchNew() {
   
 
   return (
-    <div className='search'>  
-    <div className='title2'>
-        <h4 className='orange'>Book A Bus, Journey With Ease...</h4>
-        <h5 className='normal'> Check Bus Schedules, Compare Prices and Book Ticket Online</h5>
+    <div className='flex flex-col items-center bg-[#DEF5FB]'>  
+    <div className='text-center p-[2vw]'>
+    <h4 className='text-[4vh] md:text-[6vh] xl:text-[8vh] font-semibold text-[#FDB022]'>Book A Bus, Journey With Ease...</h4>
+        <h5 className='text-[2vh] md:text-[2vh] xl:text-[3vh] font-[500] text-[#475467] w-full'> Check Bus Schedules, Compare Prices and Book Ticket Online</h5>
       </div>
       <div></div>
       <FormNew origin={origin} destination={destination} />

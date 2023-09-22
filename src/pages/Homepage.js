@@ -1,5 +1,4 @@
 import React, { useState} from 'react';
-import './homepage.css'
 import Widgets from './Widgets'
 import Why from './Why'
 import Faq from './Faq'
@@ -15,43 +14,45 @@ function Homepage() {
     setActiveButton(button);
   }
   return (
-    <div className='homepage'>
-      <div className='background'>    <div className='hlinks'>
-    <button
-        onClick={() => handleButtonClick('Bus')}
-        style={{
-          backgroundColor: activeButton === 'Bus' ? '#48A0FF' : '#F2F4F7',
-          color: activeButton === 'Bus' ? '#F2F4F7' : '#48A0FF',
-        }}
-      >
-        Bus
-      </button>
-      <button
-        onClick={() => handleButtonClick('Cargo')}
-        style={{
-          backgroundColor: activeButton === 'Cargo' ? '#48A0FF' : '#F2F4F7',
-          color: activeButton === 'Bus' ? '#48A0FF' : '#F2F4F7',
-        }}
-      >
-        Cargo
-      </button>
-    </div>
-    <div className='Bus'>
-    {activeButton === 'Bus' && <Bus />}
-      {activeButton === 'Cargo' && <Cargo />}
+    <div className='flex flex-col w-full items-center '>
+    <div className=' bg-[#DEF5FB] pb-[20vh] flex flex-col items-center mb-[-15vh] rounded-b-[4pc] rounded-bl-[4pc] w-full'>
+    <div className='flex '>
+ <button
+ className='hlinks'
+     onClick={() => handleButtonClick('Bus')}
+     style={{
+       backgroundColor: activeButton === 'Bus' ? '#48A0FF' : '#F2F4F7',
+       color: activeButton === 'Bus' ? '#F2F4F7' : '#48A0FF',
+     }}
+   >
+     Bus
+   </button>
+   <button
+       className='hlinks'
+     onClick={() => handleButtonClick('Cargo')}
+     style={{
+       backgroundColor: activeButton === 'Cargo' ? '#48A0FF' : '#F2F4F7',
+       color: activeButton === 'Bus' ? '#48A0FF' : '#F2F4F7',
+     }}
+   >
+     Cargo
+   </button>
+ </div>  
+ <div className='Bus'>
+ {activeButton === 'Bus' && <Bus />}
+   {activeButton === 'Cargo' && <Cargo />}
 
-    </div>
-<div className='widgets'>
-  <Widgets/>
-
-</div></div>
-<div className='whytranzbook'>
-<Why activeButton={activeButton}/>
+ </div></div>
+ <div>
+     <Widgets/>
+ </div>
+     <div>
+       <Why/>
+     </div>
+     <div className='fq' id='faq-section' >
+<Faq/>
 </div>
-<div className='fq' id='faq-section' >
-  <Faq/>
-</div>
-    </div>
+ </div>
   )
 }
 

@@ -1,13 +1,20 @@
 import React from 'react'
 import DirectionsBusFilledOutlinedIcon from '@mui/icons-material/DirectionsBusFilledOutlined';
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
-import RingVolumeOutlinedIcon from '@mui/icons-material/RingVolumeOutlined';import './widgets.css'
+import RingVolumeOutlinedIcon from '@mui/icons-material/RingVolumeOutlined';
+import {motion} from 'framer-motion'
 
 function Widgets() {
   return (
-    <div className='widgets'>
-
-      <div className='container'>
+    <motion.div
+    initial={{x:-550}}
+          animate={{x:0,}}
+          transition={{duration:2.5}}
+    className='flex items-center mb-[5vh] mt-[2vh] justify-center w-full'>
+         <motion.div className='flex items-center max-md:flex-col '
+          
+          >
+         <div className='container'>
         <div className='iconc'>
         <DirectionsBusFilledOutlinedIcon className='icon'/></div>
         <div className='caption'>
@@ -25,7 +32,8 @@ function Widgets() {
         <h6 className='h6'>Find and book safe and low fare trucks/cargos for your goods.</h6>
         </div>
       </div>
-
+      </motion.div>
+      <motion.div className='flex  xl:flex md:flex items-center max-md:flex-col '>
       <div className='container'>
       <div className='iconc'>
 <CompareArrowsIcon className='icon'/></div>
@@ -41,8 +49,8 @@ function Widgets() {
         <h4 className='h4'>24/7 Support</h4>
         <h6 className='h6'>Our amazing team is on standby to help you.</h6>
         </div>
-      </div>
-    </div>
+        </div>      </motion.div>
+    </motion.div>
   )
 }
 

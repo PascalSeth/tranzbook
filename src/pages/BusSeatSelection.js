@@ -1,5 +1,4 @@
 import React from 'react';
-import './busseat.css';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import KitchenOutlinedIcon from '@mui/icons-material/KitchenOutlined';
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
@@ -19,22 +18,22 @@ function BusSeatSelection() {
 
   return (
     
-    <div className='busseatpick'>
-      <div className='buscontainerseat'>
-        <div className='pickseat'>
-          <div className='pickseat-left'>
-            <h3>Review Ticket options</h3>
+    <div className='flex  flex-col items-center bg-[#48a0ff38] '>
+      <div className=' w-[80%]  bg-[#48a0ff38]'>
+        <div className='pickseat flex justify-between items-center p-[2vh]'>
+          <div className='flex items-center text-[#48a0ff] text-center w-[50%] max-lg:p-0'>
+            <h3 className='font-semibold'>Review Ticket options</h3>
         
           </div>
-          <div className='pickseat-right'>
-            <h4>Price</h4>
+          <div className='pickseat-right flex items-center max-lg:flex-col'>
+            <h4 className='text-[#48a0ff] font-medium mr-4 max-lg:mr-0' >Price</h4>
             <div className='continue-button-pick'>
-              <button>Continue</button>
+              <button className='outline-none bg-none border-none font-semibold text-white'>Continue</button>
             </div>
           </div>
         </div>
-        <div className='pickcard'>
-          <div className='pickcard-orient'>
+        <div className='pickcard flex flex-col bg-white p-[2vw] rounded-md m-[3vh]'>
+          <div className='pickcard-orient flex  flex-col pb-[2vh]'>
           <div className='pickcardtop'>
                       <PanoramaFishEyeSharpIcon className='pickcardicon'/> Origin: {origin} |
           </div>
@@ -43,7 +42,7 @@ function BusSeatSelection() {
 
           </div>
           </div>
-          <div className='pickcard-orient2'>
+          <div className='pickcard-orient2 flex flex-col '>
           <div className='pickcardtop'>
                       <LocationOnSharpIcon className='pickcardicon'/> Destination: {destination} | 
             </div>
@@ -55,12 +54,12 @@ function BusSeatSelection() {
     
         </div>
 
-      <div className='seatselection'> 
-      <div style={{display:'flex',justifyContent:"space-between",padding:12,backgroundColor:'white'}}>
-    <h4 style={{color:'#48A0FF',fontWeight:600,}}>45 Seats</h4>
-    <h4 style={{color:'#48A0FF',fontWeight:600,}}>Tour Bus</h4>
+      <div className='seatselection flex flex-col '> 
+      <div className='flex justify-between p-[2vh] bg-white'>
+    <h4 className='text-[#48a0ff] font-semibold'>45 Seats</h4>
+    <h4 className='text-[#48a0ff] font-semibold'>Tour Bus</h4>
   </div>
-<div className='seat-header'>
+<div className='seat-header' >
  
 <h4>Flexibilities and Conditions</h4>
 </div>
@@ -72,8 +71,8 @@ function BusSeatSelection() {
 <div className='seat-header'>
   <h4>Amenities</h4></div>
 
-  <div className='amenitylistcontainer'>
-  <div className='amenitylist'>
+  <div className='amenitylistcontainer bg-white items-center p-[2vh] rounded-b-lg rounded-bl-lg' >
+  <div className='amenitylist flex max-lg:flex-col'>
     <div className='amenityiconcontainer'>
     <AcUnitIcon className='amenityicon'/>
     Air Conditioning
@@ -94,10 +93,9 @@ Refrigerator
    Television
     </div>
     </div>
-    <div className='continue-button'>
-    <button>
-      Continue
-    </button>
+    <div className='continue-button-pick mt-[2vh]'>
+    <button className='outline-none bg-none border-none font-semibold text-white'>Continue</button>
+
   </div>
 
   

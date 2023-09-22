@@ -1,7 +1,6 @@
 import React, { useState} from 'react';
-import one from '../picture files/L1 3.png';
+import logohead from '../picture files/L1 3.png';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
-import './navbar.css';
 import { Link } from 'react-router-dom';
 import Login from './Login';
 import Signup from './Signup';
@@ -12,6 +11,9 @@ import CampaignIcon from '@mui/icons-material/Campaign';
 import WorkIcon from '@mui/icons-material/Work';
 import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark';
 import HelpIcon from '@mui/icons-material/Help';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+
 import AgricultureIcon from '@mui/icons-material/Agriculture';
 
 function Navbar() {
@@ -28,7 +30,7 @@ function Navbar() {
   const [showSignup, setShowSignup] = useState(false);
   const [showResources, setShowResources] = useState(false);
   const [showOptions, setShowOptions] = useState(false); // State variable for showing/hiding the options in the dropdown menu
-
+  const [navbar,setNavbar] =useState(false)
   const handleLoginClick = () => {
     setShowLogin(!showLogin);
     setShowSignup(false);
@@ -62,13 +64,14 @@ function Navbar() {
   };
 
   return (
-    <div className='navbar'>
-      <div className='left'>
-        <Link className='linksi' to={'/'}>
-          <img src={one} alt='' />
-        </Link>
-        <div className='linksc'>
-          <Link className='links' to={'/about'}>
+    <div className='flex m-0 justify-between top-0  z-[999] p-[1.6vh] sticky w-auto bg-[#DEF5FB]'>
+        
+        <div className='flex w-full items-center '>
+     <Link to='/' className='linksi' >
+          <img src={logohead} alt='' />
+        </Link> 
+        <div className='linksc  max-lg:hidden'>
+          <Link to='/about' className='links'>
             About Us
           </Link>
           <div
@@ -85,16 +88,16 @@ function Navbar() {
                 onMouseEnter={handleOptionsMouseEnter}
                 onMouseLeave={handleOptionsMouseLeave}
               >
-                <Link className='linksd' to='/blog'>
+                <Link href='' className='linksd' >
                  <DepartureBoardIcon className='dropicon'/> Bus Booking
                 </Link>
-                <Link className='linksd' to='/careers'>
+                <Link href='' className='linksd' >
                  <LocalShippingIcon className='dropicon'/> Truck Booking
                 </Link>
-                <Link className='linksd' to='/gallery'>
+                <Link href='' className='linksd' >
                  <AgricultureIcon className='dropicon'/> Agro Prefinancing
                 </Link>
-                <Link className='linksd' to='/gallery'>
+                <Link href='' className='linksd' >
                 <SchoolIcon className='dropicon'/>  Schools Booking
                 </Link>
               </div>
@@ -114,16 +117,16 @@ function Navbar() {
                 onMouseEnter={handleOptionsMouseEnter}
                 onMouseLeave={handleOptionsMouseLeave}
               >
-                <Link className='linksd' to='/blog'>
+                <Link href='' className='linksd' >
                  <CampaignIcon className='dropicon'/> Blog
                 </Link>
-                <Link className='linksd' to='/careers'>
+                <Link href='' className='linksd' >
                  <WorkIcon className='dropicon'/> Careers
                 </Link>
-                <Link className='linksd' to='/gallery'>
+                <Link href='' className='linksd' >
                  <CollectionsBookmarkIcon className='dropicon'/> Gallery
                 </Link>
-                <Link className='linksd' to='/' onClick={handleFAQClick}>
+                <Link to='/' onClick={handleFAQClick} className='linksd' >
                  <HelpIcon className='dropicon'/> FAQ
                 </Link>
               </div>
@@ -131,16 +134,24 @@ function Navbar() {
           </div>
         </div>
       </div>
-
-      <div className='right'>
-        <button onClick={handleLoginClick} className='loginb'>
+              
+      <div className='flex items-center  max-lg:hidden'>
+        <button onClick={handleLoginClick} className='logb text-black bg-[#F2F4F7]'>
           <h5>Log in</h5>
         </button>
-        <button onClick={handleSignupClick} className='signupb'>
+        <button onClick={handleSignupClick} className='logb'>
           <h5>Sign up</h5>
         </button>
         {showLogin && <Login handleClose={handleCloseClick} />}
         {showSignup && <Signup handleClose={handleCloseClick} />}
+      </div>
+      <div className=''>
+<button className='fill-black lg:hidden p-2' onClick={()=>setNavbar(!navbar)}>
+{navbar ? (
+<CloseIcon/>
+):(<MenuIcon
+className='focus:border-none active:border-none'/>)}
+</button>
       </div>
     </div>
   );

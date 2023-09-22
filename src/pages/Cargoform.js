@@ -3,8 +3,7 @@ import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined';
-import './cargoform.css'
-import CalendarInput from './Calendarinput';
+import CalendarInput from '../components/Calendar/Calendarinput';
 
 function Cargoform() {
   const [inputValue, setInputValue] = useState('');
@@ -16,13 +15,12 @@ function Cargoform() {
     setInputValue(formattedValue);
   };
   return (
-    <div className='cargoform'>
-      <form>
+    <div className='flex flex-col items-center'>
+      <form className='flex flex-col items-center'>
        
         <div className='information'>
         <PanoramaFishEyeIcon className='cargosym'/>
         <div className='cargotxt'>
-            <h6>From:</h6>
 <input placeholder='ORIGIN' className='txt'/>
         </div>
         </div>
@@ -30,7 +28,6 @@ function Cargoform() {
         <div className='information'> 
         <LocationOnIcon className='cargosym'/>
         <div className='cargotxt'>
-        <h6>To:</h6>
         <input placeholder='DESTINATION' className='txt'/>
           </div>
         </div>
@@ -38,8 +35,6 @@ function Cargoform() {
         <div className='information'>
             <CalendarMonthIcon className='cargosym'/>
         <div className='cargotxtd'>
-          <h6>Date:</h6>
-         <CalendarInput className='calenda'/>
         </div>
         </div>
 
@@ -54,8 +49,8 @@ function Cargoform() {
         <div className='inputfield'>
             <input placeholder='Enter goods description'/>
         </div>
-<div className='formbutton'>
-<button>Book</button>
+<div className='p-[1vh] bg-[#48a0ff] items-center flex flex-col w-full rounded-md'>
+<button className='p-[1vh] border-none bg-none text-white font-semibold'>Book</button>
 </div>
         </form>
     </div>

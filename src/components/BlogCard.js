@@ -1,7 +1,6 @@
 // src/components/BlogCard.js
 
 import React from 'react';
-import './blogcard.css';
 
 const BlogCard = ({ title, author, date, imageSrc, content }) => {
   return (
