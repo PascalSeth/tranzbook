@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import FormNew from '../pages/FormNew';
-import './searchnew.css';
 import HorizontalCalendarStrip from './Calendar/Calendarstrip';
 import TicketCard from './TicketCard';
 

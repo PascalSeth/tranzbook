@@ -156,9 +156,9 @@ function Busbooking() {
           <div
             key={seatCNumber}
             onClick={() => toggleSeatCSelection(seatCNumber)}
-            className='seatings flex-col mx-[1vw] max-lg:mx-[2vw] my-[1vh] w-fit cursor-pointer
-            border-gray-400 
-            items-center flex border rounded-lg maxl'
+              className='seatings flex-col mx-[1vw] max-lg:mx-[2vw] my-[1vh] w-fit cursor-pointer
+             border-gray-400 
+             items-center flex border rounded-lg maxl'
           >
             <AirlineSeatReclineNormalOutlinedIcon />
             {seatCNumber}

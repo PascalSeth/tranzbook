@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './login.css'
 import CloseIcon from '@mui/icons-material/Close';
 import logo from '../picture files/logo.png'
 const Login = ({ handleClose }) => {
