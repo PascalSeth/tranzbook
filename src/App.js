@@ -14,12 +14,13 @@ import Truckbooking from './components/Truckbooking';
 import AgroPrefinancing from './components/AgroPrefinancing';
 import BusSeatSelection from './pages/BusSeatSelection';
 import SearchNew from './components/SearchNew';
+import AdminDashboard from './pages/admin/AdminDashboard';
 
 function App() {
   return (
     <div className='h-screen w-full  overflow-x-hidden z-0'>      
-<Navbar/>
-<Routes> 
+    <Navbar/>
+    <Routes> 
   <Route index element={<Homepage/>} />
 <Route path='/' element={<Homepage/>} /> 
  <Route path='/about' element={<About/>} />
@@ -34,6 +35,7 @@ function App() {
 <Route path='/truckbooking' element={Truckbooking}/>
 <Route path='/agroprefinancing' element={AgroPrefinancing}/>
 <Route path='/search' element={<SearchNew/>}/>
+<Route path='/admindashboard'element={<AdminDashboard/>} ></Route>
 </Routes>
  </div>
   );

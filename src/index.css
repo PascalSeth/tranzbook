@@ -48,7 +48,7 @@
   @apply hover:cursor-pointer
 }
 .logb{
-  @apply p-[0.4vh] w-[6vw] hover:bg-transparent font-semibold mr-5 border-none rounded-md outline-none text-white bg-[#48a0ff]
+  @apply p-[0.4vh] w-[8vw] hover:bg-transparent font-semibold mr-5 border-none rounded-md outline-none text-white bg-[#48a0ff]
 }
 .headerlink{
   @apply pr-3 font-[550] text-gray-400  items-center hover:cursor-pointer
@@ -248,3 +248,69 @@
   .amenityiconcontainer{
     @apply flex bg-[#f9fafb] mr-[1.3vw] max-lg:pb-[1.4vh] text-[#6c7782] font-medium text-[2vh]
   }
+  .dashicon{
+    @apply hover:bg-white rounded-l-md p-[2vh] mr-[-1vw] w-[90%] flex-col flex items-center pr-[2vw] hover:cursor-pointer hover:text-[#48A1FF]  
+  }.Signup{
+    @apply flex flex-col items-center fixed top-0 left-0 right-0 bottom-0 justify-center justify-items-center w-[100%] z-[9999]  
+  }
+  .Signup>form{
+    @apply flex flex-col bg-white p-[2vw] 
+  }
+  .close{
+    @apply flex flex-col mb-[0.3vh]
+  }
+  .closec{
+    @apply cursor-pointer ml-[95%]
+  }
+  .top{
+    @apply flex flex-col items-center 
+  }
+  .top>img{
+    @apply h-[12vh]
+  }
+  .top>h3{
+    @apply text-[2.9vh] font-bold text-gray-400
+  }
+  .top>h4{
+    @apply text-[1.5vh] font-semibold text-gray-500
+  }
+  .infields{
+    @apply flex flex-col items-center p-[2vh]
+  }
+   .infields>label{
+    @apply flex flex-col pt-[2vh]
+  } 
+ .infields>label>input{
+    @apply outline-none border-[0.5px] border-[gray] w-[20vw] rounded-md 
+  }
+   .checkbox{
+    @apply flex items-center justify-between p-[1vh] mb-[2vh]
+  }
+  .checkbox>h4{
+    @apply text-[1.4vh] font-bold 
+    }
+  .checkbox>h5{
+    @apply text-[1.4vh] font-bold text-[#48A0ff]
+  }
+  .sub{
+    @apply p-[1.5vh] m-[1vh] bg-[#48A0ff] rounded-md text-white font-semibold border-none outline-none  
+  }
+  .google{
+    @apply p-[1.3vh] m-[1vh] rounded-md text-black font-semibold border-none outline-none
+  }
+  .login{
+    @apply flex flex-col items-center fixed top-0 left-0 right-0 bottom-0 justify-center justify-items-center w-[100%] z-[9999]  
+  }
+  .login>form{
+    @apply flex flex-col bg-white p-[2vw] 
+  }
+  .leftcheck{
+    @apply flex items-center text-[#1.2vh] font-bold
+  }
+  .logincheckbox{
+    @apply flex items-center justify-between p-[1vh] mb-[2vh]
+  }
+  
+    .logincheckbox>h5{
+      @apply text-[1.5vh] font-bold  text-[#48a0ff]
+      }

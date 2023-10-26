@@ -1,28 +1,48 @@
 import React, { useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import logo from '../picture files/logo.png'
+import axios from 'axios'
+import {  useNavigate } from 'react-router';
+import Login from './Login';
 
 const Signup = ({ handleClose }) => {
-    const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
+const [data,setdata] = useState({
+  firstName:"",
+  lastName:"",
+  email:"",
+  password:"",
+ 
+})
+const [error, setError] =useState('')
+const [showSignInPopup, setShowSignInPopup] = useState(false);
+
+const handleShowSignIn = () => {
+  setShowSignInPopup(true);
+};
+const handleChange =({currentTarget:input}) =>{
+  setdata({...data, [input.name]:input.value})
+}
+  const navigate = useNavigate()
 
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    try{
+      const url ="http://localhost:1080/users"
+      const {data:res} = await axios.post(url,data)
+      console.log(res.message)
+      navigate("/")
+    }catch(error){
+if(error.response &&
+  error.response.status>=400 &&
+  error.response.status<=500)
+{
+  setError(error.response.data.message)
+}
+    }
+ 
+  }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(` Email: ${email}, Password: ${password}, Name: ${name}`);
-  };
-    // Perform Signup logic here
 
   
 
@@ -40,24 +60,30 @@ const Signup = ({ handleClose }) => {
         </div>
         <div className='infields'>
         <label>
-        Name:
-        <input type="name" value={name} onChange={handleNameChange} placeholder='Enter your name'/>
+        First Name:
+        <input type="text" value={data.firstName} name='firstName' onChange={handleChange} placeholder=' First Name'/>
       </label>
-      <br/>
+      <label>
+        Last Name:
+        <input type="text" name='lastName' value={data.lastName} onChange={handleChange} placeholder=' Last Name'/>
+      </label>
       <label>
         Email:
-        <input type="email" value={email} onChange={handleEmailChange} placeholder='Enter your email' />
+        <input type="email" name='email' value={data.email} onChange={handleChange} placeholder=' Email' />
       </label>
-      <br />
       <label>
         Password:
-        <input type="password" value={password} onChange={handlePasswordChange} placeholder='Enter your password' />
+        <input type="password" name='password' value={data.password} onChange={handleChange} required placeholder=' Password' />
       </label>
-      <br />
       </div>
-     
-      <button className='sub'type="submit">Get Started</button>
-      <button className='google' type="submit">Sign Up with Google</button>
+     {
+      error &&<div>
+        {error}
+      </div>
+     }
+      { <button /*onClick={handleShowSignIn}*/  className='sub' type="submit">Get Started</button> }
+      <button  className='google' type="submit">Sign Up with Google</button>
+      {/* {showSignInPopup && <Login />} */}
 
     </form></div>
   );

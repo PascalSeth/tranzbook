@@ -64,9 +64,9 @@ function Navbar() {
   };
 
   return (
-    <div className='flex m-0 justify-between top-0  z-[999] p-[1.6vh] sticky w-auto bg-[#DEF5FB]'>
+    <div className='flex m-0 justify-between top-0  mx-auto z-[999] p-[1.6vh] sticky w-auto bg-[#DEF5FB] items-center'>
         
-        <div className='flex w-full items-center '>
+        <div className='flex w-full items-center max-w-7xl mx-auto '>
      <Link to='/' className='linksi' >
           <img src={logohead} alt='' />
         </Link> 
