@@ -28,7 +28,7 @@ const handleChange =({currentTarget:input}) =>{
   const handleSubmit = async(e) => {
     e.preventDefault();
     try{
-      const url ="http://localhost:1080/users"
+      const url ="mongodb+srv://pascalelikem:Supersonic15@tranzbook.fuchd5p.mongodb.net/users"
       const {data:res} = await axios.post(url,data)
       console.log(res.message)
       navigate("/")
