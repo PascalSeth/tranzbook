@@ -22,7 +22,7 @@ const navigate = useNavigate()
   const handleSubmit = async (event) => {
     event.preventDefault();
     try{
-      const url ="mongodb+srv://pascalelikem:Supersonic15@tranzbook.fuchd5p.mongodb.net/auth"
+      const url ="http://localhost:1080/auth"
       const {data:res} = await axios.post(url,data)
             localStorage.setItem("token",res.data)
 navigate("/")
