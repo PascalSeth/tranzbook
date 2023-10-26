@@ -25,8 +25,10 @@ const navigate = useNavigate()
       const url ="http://localhost:1080/auth"
       const {data:res} = await axios.post(url,data)
             localStorage.setItem("token",res.data)
+navigate("/about")
+handleClose()
 console.log(res.message) 
-navigate("/")
+
 }catch(error){
 if(error.response &&
   error.response.status>=400 &&
@@ -73,7 +75,7 @@ if(error.response &&
       error &&<div>
         {error}
      </div> }
-      <button className='sub'type="submit">Sign in</button>
+      <button  className='sub'type="submit">Sign in</button>
       <button className='google' type="submit">Sign in with Google</button>
 
     </form></div>
