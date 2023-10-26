@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import logo from '../picture files/logo.png'
 import axios from 'axios'
+import {  useNavigate } from 'react-router';
+
+const navigate = useNavigate()
+
 
 const Login = ({ handleClose }) => {
   const [data,setdata] = useState({
@@ -22,8 +26,8 @@ const Login = ({ handleClose }) => {
       const {data:res} = await axios.post(url,data)
             localStorage.setItem("token",res.data)
 console.log(res.message) 
-      window.location="/"
-    }catch(error){
+navigate("/")
+}catch(error){
 if(error.response &&
   error.response.status>=400 &&
   error.response.status<=500)
