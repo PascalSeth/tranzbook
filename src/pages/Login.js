@@ -4,7 +4,6 @@ import logo from '../picture files/logo.png'
 import axios from 'axios'
 import {  useNavigate } from 'react-router';
 
-const navigate = useNavigate()
 
 
 const Login = ({ handleClose }) => {
@@ -18,6 +17,7 @@ const Login = ({ handleClose }) => {
   const handleChange =({currentTarget:input}) =>{
     setdata({...data, [input.name]:input.value})
   }
+const navigate = useNavigate()
 
   const handleSubmit = async (event) => {
     event.preventDefault();
