@@ -16,12 +16,10 @@ function Bus() {
   return (
     <div className='flex flex-col items-center w-screen justify-center '>
     <div className='flex flex-col items-center text-center'>
-    <h4 className='text-[4vh] md:text-[6vh] xl:text-[8vh] font-semibold text-[#FDB022]'>Book A Bus, Journey With Ease...</h4>
-    <h5 className='text-[2vh] md:text-[2vh] xl:text-[3vh] font-[500] text-[#475467] w-full'>
-      <span>
-          {text}
-      </span><Cursor/>
-    </h5>
+    <h4 className='text-[#FDB022] text-[6vh] max-sm:text-[4vh] max-md:text-[4.4vh] font-semibold'>Book A Truck, Move Goods Easily</h4>
+     <h5 className='text-[#475467] text-[2vh] max-lg:text-[1.9vh] w-full 
+     font-medium'>  <span>  {text}<Cursor/></span></h5>
+    
   </div> 
   <div>
       <FormNew/>

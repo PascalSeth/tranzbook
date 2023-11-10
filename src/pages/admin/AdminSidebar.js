@@ -8,7 +8,7 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 export default function AdminSidebar() {
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-[0.2] flex-col items-center'>
       <div className=' text-white flex flex-col items-center space-y-6 py-[10vh]
         bg-[#48A1FF] rounded-md h-[100%] w-[80%]'>
     <div className='dashicon'>

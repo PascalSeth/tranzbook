@@ -87,7 +87,9 @@
   @apply border-none outline-none bg-transparent
  }
  .search-button{
-  @apply flex hover:cursor-pointer items-center bg-[#48A0ff] w-fit px-2 rounded-r-xl max-lg:w-full max-lg:text-center max-lg:h-[4vh] max-lg:justify-center max-lg:rounded-lg }
+  @apply flex hover:cursor-pointer items-center bg-[#48A0ff] w-fit px-2 rounded-r-xl
+   max-lg:w-full max-lg:text-center max-lg:p-[1vh]
+   max-lg:justify-center max-lg:rounded-lg }
   .searchText{
     @apply text-white font-[1.7vh] max-lg:text-center max-lg:items-center
   }
@@ -106,10 +108,10 @@
     @apply px-[0.5vw] font-[1.8vh] text-[#475467] font-medium
   }
   .icon{
-    @apply fill-white
-  }
+    @apply text-white 
+    }
   .iconc{
-   @apply bg-[#48A0fF] w-fit p-[0.4vw]
+   @apply bg-[#48A0fF] w-fit max-lg:p-[1.3vw] rounded-md p-[0.9vw]
   }
   .popup{
     @apply  absolute z-10 w-[12vw] max-h-[50vh] max-lg:max-h-[30vh] max-lg:overflow-y-scroll max-lg:w-fit overflow-y-auto bg-white border rounded-md
@@ -187,7 +189,7 @@
     @apply mr-[9.3vw]
    }
    .inputfield>input{
-    @apply border-none outline-none bg-none
+    @apply border-none w-full outline-none mb-[1vh] border-transparent bg-none pb-[12vh] shadow-lg rounded-lg
    }
    .cargotxt>input{
     @apply border-none outline-none bg-none

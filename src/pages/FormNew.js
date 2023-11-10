@@ -128,8 +128,8 @@ const handleDateChange = (date) => {
   };
 
   return (
-    <div className='flex p-[6vh] max-lg:flex-col z-20 '>
-    <div className='flex max-lg:flex-col items-center justify-center bg-white w-full border p-[0.3vh] border-[#FDB022] rounded-l-lg max-lg:border-none '>
+    <div className='flex p-[6vh] max-lg:p-[2vh] max-lg:flex-col z-20 '>
+    <div className='flex  max-lg:flex-col items-center justify-center bg-white w-full border p-[0.3vh] border-[#FDB022] rounded-l-lg max-lg:border-none '>
    <div className='form-space'>
      <PanoramaFishEyeIcon className='float-Icon' />
      <div className='columnContainer'>

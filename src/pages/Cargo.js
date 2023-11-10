@@ -17,15 +17,22 @@ function Cargo() {
   
   <div className='flex max-lg:mt-5 flex-col items-center p-[2vw] bg-white mr-[2vw] shadow-lg '>
       <h5>Discover trucks for your goods</h5>
-  <Cargoform/>
+    <Cargoform/>
   </div>
   
   <div className='items-center flex flex-col text-center'>
-        <h4 className='text-[#FDB022] text-[6vh] font-semibold'>Book A Truck, Move Goods Easily</h4>
-     <h5 className='text-[#475467] text-[2vh] w-full font-medium'>  <span>  {text}<Cursor/></span></h5>
-        <img className='h-full' src={second} alt=''/>
-      </div></div>  
+  <h4 className='text-[#FDB022] text-[6vh] max-sm:text-[4vh] max-md:text-[4.4vh] font-semibold'>Book A Truck, Move Goods Easily</h4>
+         <div className='h-[6vh]'>      
+           <h5 className='text-[#475467] text-[2vh] max-lg:text-[1.9vh] w-full font-medium'>  
+     <span> 
+       {text}<Cursor/>
+     </span>
+         </h5>  
+              </div>
+  <img className='h-full' src={second} alt=''/>
       </div>
+         </div>  
+           </div>
   )
 }
 

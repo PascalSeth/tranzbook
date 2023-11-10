@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Dashinterface() {
   return (
-    <div className='bg-[#F4FCFF] w-[100%] flex flex-col items-center my-[8vh] '>
-        <div className='bg-[#F4FCFF] h-[30vh] w-[80vw] my-[8vh] p-[2vh]'>
+    <div className=' w-full h-full   my-[8vh] max-lg:my-[4vh] flex flex-col items-center '>
+        <div className='bg-[#00bafd] h-[30vh] w-[80vw]  p-[2vh] rounded-md  max-lg:h-[20vh]'>
 </div>
     </div>
   )

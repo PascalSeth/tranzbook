@@ -49,13 +49,13 @@ function TicketCard() {
     <div>
       {tickets.map((ticket, index) => (
         <div className='ticketcard' key={index}>
-          <div className='flex mb-[7vh] max-lg:flex-col '>
+          <div className='flex mb-[7vh] max-md:flex-col '>
             <div className='value flex flex-col bg-white items-center p-[2vh] rounded-md
-             mr-[2vw] h-[35vh] w-fit max-lg:h-fit max-lg:w-[90vw]'>
+             mr-[2vw] h-[35vh] w-fit max-md:h-fit max-md:w-[90vw]'>
               <div>
                 <h2 className='tickethead text-[2vh]'>Sort By</h2>
               </div>
-              <div className='buttoncontain flex flex-col items-center max-lg:flex-row'>
+              <div className='buttoncontain flex flex-col items-center max-md:flex-row'>
               <button
                 onClick={() => handleButtonClick('Regular')}
                 style={{
@@ -85,10 +85,10 @@ function TicketCard() {
               </button></div>
             </div>
 
-            <div className='flex bg-white p-[2vh] rounded-md w-[40vw] h-[35vh] justify-between max-lg:w-[90vw] '>
+            <div className='flex bg-white p-[2vh] rounded-md w-[40vw] h-[35vh] justify-between max-md:w-[90vw] '>
               <div className='flex flex-col  justify-between'>
                 <div className='buspic'>
-                  <img className='w-12vw h-[12vh] object-fill' src={ticket.imageUrl} alt='' />
+                  <img className='w-full h-[16vh] object-fill' src={ticket.imageUrl} alt='' />
                 </div>
                 <div className='sectiontop '>
                   <h2>
