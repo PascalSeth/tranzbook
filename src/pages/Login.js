@@ -18,6 +18,7 @@ const Login = ({ handleClose }) => {
     setdata({...data, [input.name]:input.value})
   }
 const navigate = useNavigate()
+axios.defaults.withCredentials = true;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
