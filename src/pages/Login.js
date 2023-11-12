@@ -23,7 +23,7 @@ axios.defaults.withCredentials = true;
   const handleSubmit = async (event) => {
     event.preventDefault();
     try{
-      const url ="https://tranzbookdb.vercel.app/auth"
+      const url ="https://vercel.com/pascal-s-projects-c7de1887/tranzbookdb/HG6meguSAu39qcpe7h3zTEghWRtF/auth"
       const {data:res} = await axios.post(url,data)
             localStorage.setItem("token",res.data)
 navigate("/")
