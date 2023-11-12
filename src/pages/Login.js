@@ -23,7 +23,7 @@ axios.defaults.withCredentials = true;
   const handleSubmit = async (event) => {
     event.preventDefault();
     try{
-      const url ="https://server-mauve-iota.vercel.app/auth"
+      const url ="https://server-ashy-six-37.vercel.app/auth"
       const {data:res} = await axios.post(url,data)
             localStorage.setItem("token",res.data)
 navigate("/")
