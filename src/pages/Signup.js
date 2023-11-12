@@ -28,7 +28,7 @@ const handleChange =({currentTarget:input}) =>{
   const handleSubmit = async(e) => {
     e.preventDefault();
     try{
-      const url ="https://tranzbookdb.vercel.app"
+      const url ="https://tranzbookdb.vercel.app/users"
       const {data:res} = await axios.post(url,data)
       console.log(res.message)
       navigate("/")
