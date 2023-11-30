@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import logohead from '../picture files/L1 3.png';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import { Link } from 'react-router-dom';
@@ -13,10 +13,50 @@ import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark';
 import HelpIcon from '@mui/icons-material/Help';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-
+import { useDispatch } from 'react-redux';
 import AgricultureIcon from '@mui/icons-material/Agriculture';
+import {  signOut } from "firebase/auth";
+import { toast } from 'react-toastify';
+import auth from '../firebase/config'
+import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../redux/features/authSlice';
+import { Avatar } from '@mui/material';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import ShowOnLogin, { ShowOnLogOut } from './hiddenlinks';
 
-function Navbar() {
+
+function Navbar() {  
+  const [displayName, setdisplayName] = useState("");
+  const[photoURL,setphotoURL]=useState(null)
+  const dispatch=useDispatch();
+
+    useEffect(() => {
+      const auths=getAuth()
+    onAuthStateChanged(auths, (user) => {
+      if (user) {
+        console.log(user)
+        if (user.displayName==null){
+          const userEmailName= user.email.substring(0, user.email.indexOf("@"))
+          const uName =userEmailName.charAt(0).toUpperCase() + userEmailName.slice(1)
+          setdisplayName(uName)
+        } else{
+          setdisplayName(user.displayName)
+        }
+        setphotoURL(user.photoURL); // <-- Add this line
+
+        dispatch(SET_ACTIVE_USER({
+          email:user.email,
+          userName:user.displayName?user.displayName: displayName,
+          userID:user.uid,
+          photoURL:user.photoURL
+        }))
+      } else {
+        setdisplayName("")
+        dispatch(REMOVE_ACTIVE_USER())
+      }
+    });
+  },[dispatch,displayName])
+
+
   const handleFAQClick = () => {
     const faqSection = document.getElementById('faq-section');
     if (faqSection) {
@@ -26,6 +66,7 @@ function Navbar() {
       
     }
   };
+
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
   const [showResources, setShowResources] = useState(false);
@@ -63,14 +104,24 @@ function Navbar() {
     setShowSignup(false);
   };
 
+  const logoutUser=()=>{
+    const auths=getAuth()
+    signOut(auths).then(() => {
+toast.success("Logged Out Successfully")    
+}).catch((error) => {
+toast.error("Unable to LogOut")  
+  });
+  }
+
+
+
   return (
     <div className='flex m-0 justify-between top-0  mx-auto z-[999] p-[1.6vh] sticky w-auto bg-[#DEF5FB] items-center'>
-        
         <div className='flex w-full items-center max-w-7xl mx-auto '>
      <Link to='/' className='linksi' >
           <img src={logohead} alt='' />
         </Link> 
-        <div className='linksc  max-lg:hidden'>
+        <div className='linksc  max-lg:hidden'>  
           <Link to='/about' className='links'>
             About Us
           </Link>
@@ -136,12 +187,25 @@ function Navbar() {
       </div>
               
       <div className='flex items-center  max-lg:hidden'>
+      <ShowOnLogOut>
         <button onClick={handleLoginClick} className='logb text-black bg-[#F2F4F7]'>
           <h5>Log in</h5>
         </button>
         <button onClick={handleSignupClick} className='logb'>
           <h5>Sign up</h5>
         </button>
+        </ShowOnLogOut>
+        <ShowOnLogin>
+          <button className='mr-3'>       {photoURL ? (
+            <img src={photoURL} className='rounded-full' height={50} width={50} alt='User Avatar' />
+          ) : (
+            <Avatar alt='User Avatar' />
+          )}</button>
+ 
+        <button onClick={logoutUser} className='logb'>
+          <h5>Log Out</h5>
+        </button> 
+        </ShowOnLogin>
         {showLogin && <Login handleClose={handleCloseClick} />}
         {showSignup && <Signup handleClose={handleCloseClick} />}
       </div>

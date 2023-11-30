@@ -1,8 +1,11 @@
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import React, { useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import logo from '../picture files/logo.png'
 import axios from 'axios'
 import {  useNavigate } from 'react-router';
+import { getAuth,createUserWithEmailAndPassword } from "firebase/auth";
 import Login from './Login';
 
 const Signup = ({ handleClose }) => {
@@ -11,6 +14,7 @@ const [data,setdata] = useState({
   lastName:"",
   email:"",
   password:"",
+  confirmpassword:""
  
 })
 const [error, setError] =useState('')
@@ -22,31 +26,44 @@ const handleShowSignIn = () => {
 const handleChange =({currentTarget:input}) =>{
   setdata({...data, [input.name]:input.value})
 }
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  axios.defaults.withCredentials = true;
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-      const url ="https://tranzbookserver.vercel.app/users"
-      const {data:res} = await axios.post(url,data)
-      console.log(res.message)
-      navigate("/")
-    }catch(error){
-if(error.response &&
-  error.response.status>=400 &&
-  error.response.status<=500)
-{
-  setError(error.response.data.message)
-}
+  
+    if (data.password !== data.confirmpassword) {
+      toast.error("Passwords do not match");
+      return;
     }
- 
-  }
+    console.log(data.email, data.password)
+    const auth = getAuth();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password
+      );
+  
+      const user = userCredential.user;
+   console.log(user)
+      navigate("/"); // Assuming you want to navigate to a new page after successful registration
+         toast.success("Registered Successfully");
+         handleClose(); // Close the popup after successful login
+
+ } catch (error) {
+      console.error("Error registering user:", error);
+      toast.error("Registration failed");
+    }
+  };
+  
+  
 
 
   
 
   return (
+    <>
+    <ToastContainer/>
     <div className='Signup'>
     <form onSubmit={handleSubmit}>
       <div className='close'>
@@ -75,17 +92,17 @@ if(error.response &&
         Password:
         <input type="password" name='password' value={data.password} onChange={handleChange} required placeholder=' Password' />
       </label>
+      <label>
+        Confirm Password:
+        <input type="password" name='confirmpassword' value={data.confirmpassword} onChange={handleChange} required placeholder=' Confirm Password' />
+      </label>
       </div>
-     {
-      error &&<div>
-        {error}
-      </div>
-     }
-      { <button /*onClick={handleShowSignIn}*/  className='sub' type="submit">Get Started</button> }
+     
+      <button /*onClick={handleShowSignIn}*/  className='sub' type="submit">Get Started</button> 
       <button  className='google' type="submit">Sign Up with Google</button>
       {/* {showSignInPopup && <Login />} */}
 
-    </form></div>
+    </form></div></>
   );
   };
 

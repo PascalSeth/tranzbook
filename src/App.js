@@ -15,14 +15,18 @@ import AgroPrefinancing from './components/AgroPrefinancing';
 import BusSeatSelection from './pages/BusSeatSelection';
 import SearchNew from './components/SearchNew';
 import AdminDashboard from './pages/admin/AdminDashboard';
+import { ToastContainer } from 'react-toastify';
+import Reset from './pages/Reset';
 
 function App() {
   return (
-    <div className='h-screen w-full  overflow-x-hidden z-0'>      
+    <div className='h-screen w-full  overflow-x-hidden z-0'>     
+    <ToastContainer/> 
     <Navbar/>
     <Routes> 
   <Route index element={<Homepage/>} />
 <Route path='/' element={<Homepage/>} /> 
+<Route path='/reset' element={<Reset/>} />
  <Route path='/about' element={<About/>} />
  <Route path='/blog' element={<Blog/>} />
  <Route path='/careers' element={<Careers/>} />
