@@ -42,7 +42,7 @@ const Login = ({ handleClose }) => {
     const provider = new GoogleAuthProvider();
   const SignInWithGoogle=()=>{
     const auth = getAuth();
-    signInWithRedirect(auth, provider)
+    signInWithPopup(auth, provider)
       .then((result) => {
         // // This gives you a Google Access Token. You can use it to access the Google API.
         // const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -104,7 +104,7 @@ const Login = ({ handleClose }) => {
             </div>
           }
           <button className='sub' type="submit">Sign in</button>
-          <button className='google' type="submit" onClick={SignInWithGoogle}>Sign in with Google</button>
+          <button className='google' onClick={SignInWithGoogle}>Sign in with Google</button>
         </form>
       </div>
     </>

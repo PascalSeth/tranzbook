@@ -25,6 +25,10 @@ import ShowOnLogin, { ShowOnLogOut } from './hiddenlinks';
 
 
 function Navbar() {  
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
   const [displayName, setdisplayName] = useState("");
   const[photoURL,setphotoURL]=useState(null)
   const dispatch=useDispatch();
@@ -209,13 +213,32 @@ toast.error("Unable to LogOut")
         {showLogin && <Login handleClose={handleCloseClick} />}
         {showSignup && <Signup handleClose={handleCloseClick} />}
       </div>
-      <div className=''>
-<button className='fill-black lg:hidden p-2' onClick={()=>setNavbar(!navbar)}>
-{navbar ? (
-<CloseIcon/>
-):(<MenuIcon
-className='focus:border-none active:border-none'/>)}
-</button>
+      
+      
+       {/* Mobile Menu */}
+       <div className='lg:hidden flex justify-between items-center  w-full'>
+        <div className=' flex max-w-6xl p-[1vh] m-auto justify-between w-screen '>
+          <Link href="/" className='left-header items-center'>
+            <img src={logohead} alt='logo' width={150} height={60} className='object-contain bg-none' />
+          </Link>
+          <div className='rightHead-md z-[999]'>
+            <MenuIcon className='hover:cursor-pointer text-[4vh] ' onClick={toggleMenu} />
+          </div>
+        </div>
+        {isMenuOpen && (
+          <div className='lg:hidden  w-full fixed h-screen z-50 left-0 right-0 top-0'>
+            {/* Your side menu content goes here */}
+            
+            <div className='fixed bg-white flex flex-col h-screen border rounded-md fright-0 w-[60%]  z-50 '>
+              <Link href="/components/"  className='textLinkpop'>Service</Link >
+              <Link href="/components/"  className='textLinkpop'>Software</Link >
+              <Link href="/components/"  className='textLinkpop'>Job</Link >
+              <Link href="/components/"  className='textLinkpop'>Blog</Link >
+              <Link href="/components/"  className='textLinkpop'>Browse Categories</Link >
+              <Link href="/components/"  className='textLinkpop'>Contact</Link >
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
