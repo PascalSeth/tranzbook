@@ -218,7 +218,7 @@ toast.error("Unable to LogOut")
        {/* Mobile Menu */}
        <div className='lg:hidden flex justify-between items-center  w-full'>
         <div className=' flex max-w-6xl p-[1vh] m-auto justify-between w-screen '>
-          <Link href="/" className='left-header items-center'>
+          <Link href="/" className='mobile-header items-center'>
             <img src={logohead} alt='logo' width={150} height={60} className='object-contain bg-none' />
           </Link>
           <div className='rightHead-md z-[999]'>
@@ -228,14 +228,75 @@ toast.error("Unable to LogOut")
         {isMenuOpen && (
           <div className='lg:hidden  w-full fixed h-screen z-50 left-0 right-0 top-0'>
             {/* Your side menu content goes here */}
+          
             
             <div className='fixed bg-white flex flex-col h-screen border rounded-md fright-0 w-[60%]  z-50 '>
-              <Link href="/components/"  className='textLinkpop'>Service</Link >
-              <Link href="/components/"  className='textLinkpop'>Software</Link >
-              <Link href="/components/"  className='textLinkpop'>Job</Link >
-              <Link href="/components/"  className='textLinkpop'>Blog</Link >
-              <Link href="/components/"  className='textLinkpop'>Browse Categories</Link >
-              <Link href="/components/"  className='textLinkpop'>Contact</Link >
+             <Link href="/" className='mobile-header items-center'>
+            <img src={logohead} alt='logo' width={150} height={60} className='object-contain bg-transparent' />
+          </Link> 
+          <div className='flex flex-col items-center w-full '>  
+          <Link to='/about' className='links w-full text-center'>
+            About Us
+          </Link>
+          <div
+            className='dropdown max-lg:flex-col'
+            onMouseEnter={handleResourcesMouseEnter}
+            onMouseLeave={handleResourcesMouseLeave}
+          >
+            <h5 className='linksw'>
+              Products<KeyboardArrowDownOutlinedIcon />
+            </h5>
+            {showResources && (
+              <div
+                className={`dropdown-content ${showOptions ? 'show-options' : ''}`}
+                onMouseEnter={handleOptionsMouseEnter}
+                onMouseLeave={handleOptionsMouseLeave}
+              >
+                <Link href='' className='linksd' >
+                 <DepartureBoardIcon className='dropicon'/> Bus Booking
+                </Link>
+                <Link href='' className='linksd' >
+                 <LocalShippingIcon className='dropicon'/> Truck Booking
+                </Link>
+                <Link href='' className='linksd' >
+                 <AgricultureIcon className='dropicon'/> Agro Prefinancing
+                </Link>
+                <Link href='' className='linksd' >
+                <SchoolIcon className='dropicon'/>  Schools Booking
+                </Link>
+              </div>
+            )}
+          </div>
+          <div
+            className='dropdown'
+            onMouseEnter={handleResourcesMouseEnter}
+            onMouseLeave={handleResourcesMouseLeave}
+          >
+            <h5 className='linksw'>
+              Resources<KeyboardArrowDownOutlinedIcon />
+            </h5>
+            {showResources && (
+              <div
+                className={`dropdown-content ${showOptions ? 'show-options' : ''}`}
+                onMouseEnter={handleOptionsMouseEnter}
+                onMouseLeave={handleOptionsMouseLeave}
+              >
+                <Link href='' className='linksd' >
+                 <CampaignIcon className='dropicon'/> Blog
+                </Link>
+                <Link href='' className='linksd' >
+                 <WorkIcon className='dropicon'/> Careers
+                </Link>
+                <Link href='' className='linksd' >
+                 <CollectionsBookmarkIcon className='dropicon'/> Gallery
+                </Link>
+                <Link to='/' onClick={handleFAQClick} className='linksd' >
+                 <HelpIcon className='dropicon'/> FAQ
+                </Link>
+              </div>
+            )}
+          </div>
+          </div>
             </div>
           </div>
         )}

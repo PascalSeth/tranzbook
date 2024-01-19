@@ -3,20 +3,32 @@ import AcUnitIcon from '@mui/icons-material/AcUnit';
 import KitchenOutlinedIcon from '@mui/icons-material/KitchenOutlined';
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
 import DesktopWindowsOutlinedIcon from '@mui/icons-material/DesktopWindowsOutlined';
-import { useLocation } from 'react-router-dom'; // Import useLocation
 import PanoramaFishEyeSharpIcon from '@mui/icons-material/PanoramaFishEyeSharp';
 import LocationOnSharpIcon from '@mui/icons-material/LocationOnSharp';
 import AccessTimeSharpIcon from '@mui/icons-material/AccessTimeSharp';
 import Busbooking from '../components/Busbooking';
+import { useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function BusSeatSelection() {
-  const location = useLocation(); // Use useLocation hook
+  const navigate = useNavigate(); // Use useNavigate hook
+
+  const location = useLocation();
   const origin = location.state ? location.state.origin : 'N/A';
   const destination = location.state ? location.state.destination : 'N/A';
   const ticketQuantity = location.state ? location.state.ticketQuantity : 'N/A';
   const selectedDate = location.state ? location.state.selectedDate : 'N/A';
 
-  return (
+  const handleContinueClick = () => {
+    // Navigate to the next page with ticket details
+    navigate('/ticketconfirmation', {
+      state: {
+        origin,
+        destination,
+        ticketQuantity,
+        selectedDate,
+      },
+    });
+  };  return (
     
     <div className='flex  flex-col items-center bg-[#48a0ff38] '>
       <div className=' w-[80%]  bg-[#48a0ff38]'>
@@ -94,7 +106,7 @@ Refrigerator
     </div>
     </div>
     <div className='continue-button-pick mt-[2vh]'>
-    <button className='outline-none bg-none border-none font-semibold text-white'>Continue</button>
+    <button onClick={handleContinueClick} className='outline-none bg-none border-none font-semibold text-white'>Continue</button>
 
   </div>
 

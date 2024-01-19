@@ -3,7 +3,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import logo from '../picture files/logo.png'
 import axios from 'axios'
 import {  useNavigate } from 'react-router';
-import {  signInWithEmailAndPassword, signInWithRedirect } from "firebase/auth";
+import {  signInWithEmailAndPassword} from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
@@ -49,21 +49,17 @@ const Login = ({ handleClose }) => {
         // const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        toast.success("Logged in Sucessfully")
         navigate("/")
         handleClose(); // Close the popup after successful login
         // IdP data available using getAdditionalUserInfo(result)
+        if(user){
+          toast.success("Logged in Successfully");
+        }else {
+          toast.error("Failed to retrieve user information");
+        }
         // ...
       }).catch((error) => {
         toast.error(error.message)
-        // // Handle Errors here.
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // // The email of the user's account used.
-        // const email = error.customData.email;
-        // // The AuthCredential type that was used.
-        // const credential = GoogleAuthProvider.credentialFromError(error);
-        // // ...
       });
 
   }

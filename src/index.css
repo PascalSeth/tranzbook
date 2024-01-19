@@ -7,7 +7,7 @@
   @apply flex items-center 
  }
   .links{
-    @apply font-semibold text-white items-center p-2 px-2 md:px-3  xl:px-4 border-r-2 rounded-lg  hover:cursor-pointer 
+    @apply font-semibold text-white max-lg:text-[#48a0ff]  items-center p-2 px-2 md:px-3  xl:px-4 border-r-2 rounded-lg  hover:cursor-pointer 
   }
   .linksd{
     @apply flex items-center
@@ -25,12 +25,12 @@
 @apply cursor-pointer text-[#48a0ff] rounded-md
   }
   .dropdown{
-    @apply flex z-[999] flex-col font-semibold items-center text-[#475467] relative 
+    @apply flex z-[999] flex-col font-semibold items-center text-[#475467] relative max-lg:static
   }
   .dropdown-content{
     display: none;
-    @apply absolute z-[999] top-[3vh] left-0 bg-white shadow-lg min-w-[150px]  rounded-md p-[2vh] w-[13vw]  
-  }
+    @apply absolute z-[999] top-[3vh] left-0 bg-white shadow-lg min-w-[150px]  rounded-md p-[2vh] w-[13vw]  max-lg:static  max-lg:w-full max-lg:min-w-full 
+   }
   .dropdown-content a{
     @apply flex text-[#475467] rounded-md font-medium p-[2vh] text-[1.8vh] w-[90%]
   }
@@ -60,16 +60,16 @@
   @apply font-semibold text-white items-center p-2 px-2 md:px-3  xl:px-4 border-r-2 rounded-lg  hover:cursor-pointer w-20
 }
   .columncontainer{
-    @apply flex flex-col w-[12vw]
+    @apply flex flex-col w-[12vw] 
   }
   .float-Icon{
     @apply mr-[1vw] items-center text-[#48A0ff]
   }
   .word{
-@apply text-[#48A0ff] opacity-[0.3] text-[2vh]
+@apply text-[#48A0ff] opacity-[0.3] text-[1.4vh] font-bold
   }
   .calform-space{
-    @apply flex overflow-hidden w-[16vw]  max-lg:my-2 max-lg:rounded-lg max-lg:mr-2 border-r-[#48A0ff] border-r items-center p-[0.4vh] hover:bg-[#cccccc2a] max-lg:border max-lg:w-[40vw] max-lg:border-[orange]
+    @apply flex overflow-hidden w-[16vw]   max-lg:my-2 max-lg:rounded-lg max-lg:mr-2 border-r-[#48A0ff] border-r items-center p-[0.4vh] hover:bg-[#cccccc2a] max-lg:border max-lg:w-[40vw] max-lg:border-[orange]
   }
   .calform-space2{
     @apply flex overflow-hidden w-[16vw] max-lg:my-2 max-lg:rounded-lg border-r-[#48A0ff] border-r items-center p-[0.4vh] hover:bg-[#cccccc2a]  max-lg:border  max-lg:border-[orange]  max-lg:w-[40vw]

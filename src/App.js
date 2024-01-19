@@ -17,6 +17,7 @@ import SearchNew from './components/SearchNew';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import { ToastContainer } from 'react-toastify';
 import Reset from './pages/Reset';
+import TicketConfirmation from './pages/TicketConfirmation';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
   <Route index element={<Homepage/>} />
 <Route path='/' element={<Homepage/>} /> 
 <Route path='/reset' element={<Reset/>} />
+<Route path='/ticketconfirmation' element={<TicketConfirmation/>}/>
  <Route path='/about' element={<About/>} />
  <Route path='/blog' element={<Blog/>} />
  <Route path='/careers' element={<Careers/>} />

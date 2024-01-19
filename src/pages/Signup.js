@@ -5,7 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import logo from '../picture files/logo.png'
 import axios from 'axios'
 import {  useNavigate } from 'react-router';
-import { getAuth,createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth,createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Login from './Login';
 
 const Signup = ({ handleClose }) => {
@@ -55,7 +55,9 @@ const handleChange =({currentTarget:input}) =>{
       toast.error("Registration failed");
     }
   };
-  
+  const provider = new GoogleAuthProvider();
+
+
   
 
 
@@ -99,7 +101,6 @@ const handleChange =({currentTarget:input}) =>{
       </div>
      
       <button /*onClick={handleShowSignIn}*/  className='sub' type="submit">Get Started</button> 
-      <button  className='google' type="submit">Sign Up with Google</button>
       {/* {showSignInPopup && <Login />} */}
 
     </form></div></>
